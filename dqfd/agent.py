@@ -5,10 +5,9 @@ import copy
 import torch
 from torch.autograd import Variable
 
-# The package is implement in the above cell so commented out!
-from utils import ReplayMemory
-from utils import RewardStepPairs
-from utils import Container
+from dqfd.utils import ReplayMemory
+from dqfd.utils import RewardStepPairs
+from dqfd.utils import Container
 
 LongTensor = torch.LongTensor
 FloatTensor = torch.FloatTensor
