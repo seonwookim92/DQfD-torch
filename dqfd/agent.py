@@ -150,6 +150,7 @@ class DQNAgent(Agent):
             if self.rule_processor.__name__ == "decision":
                 action = self.rule_processor(self.env)
                 act = action
+                print(act)
             else:
                 action = self.rule_processor(obs)
                 act = action.numpy().squeeze()
