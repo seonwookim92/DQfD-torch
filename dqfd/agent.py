@@ -69,6 +69,7 @@ class DQNAgent(Agent):
         # Added
         self.last_train_eval = -np.inf
         self.last_train_saved_weights = self.model.state_dict()
+        self.reward_episode = 0
 
     def select_action(self, state):
         if self.is_training:
