@@ -146,7 +146,10 @@ class DQNAgent(Agent):
             state = torch.from_numpy(temp).type(FloatTensor)
 
         if self.GET_DEMO:
-            action = self.rule_processor(obs)
+            if self.rule_processor.__name__ == "decision":
+                action = self.rule_processor(self.env)
+            else:
+                action = self.rule_processor(obs)
         else:
             action = self.select_action(state)
 
