@@ -148,12 +148,15 @@ class DQNAgent(Agent):
         if self.GET_DEMO:
             if self.rule_processor.__name__ == "decision":
                 action = self.rule_processor(self.env)
+                act = action
             else:
                 action = self.rule_processor(obs)
+                act = action.numpy().squeeze()
         else:
             action = self.select_action(state)
-
-        act = action.numpy().squeeze()
+            act = action.numpy().squeeze()
+        
+        # act = action.numpy().squeeze()
         if self.VERBOSE:
             print("action: {}".format(act))
         action_step = self.ACTION_REPEAT
