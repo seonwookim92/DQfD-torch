@@ -50,6 +50,7 @@ class Agent(object):
 
         # Added
         self.CAREFUL_TRAIN = kwargs.pop("careful_train", False)
+        self.max_episode_length = kwargs.pop("max_episode_length", 5000)
 
 class DQNAgent(Agent):
     def __init__(self, model, env, **kwargs):
